@@ -132,58 +132,51 @@ endmodule</string>
     input clk,
     input pause,
     input rst,
-    output reg sm_bit, 
     output reg[6:0]sm_seg
     );
     
-    reg [3:0]timesec0;
-    
-    initial begin
-    sm_bit=1;
-    sm_seg=1;
-    timesec0=0;
+reg [3:0]timesec0;
+
+initial begin
+sm_seg=1;
+timesec0=0;
+end
+
+always @(posedge clk) begin
+        if(pause) begin
+            if(timesec0==9) timesec0=0;
+        else timesec0=timesec0+1;  
     end
-    
-    always @(posedge clk) begin
-    if(pause) begin
-    if(timesec0==9)
-    timesec0=0;
+        if(~pause) timesec0=0;
+end
+
+always@(posedge show or negedge rst)
+begin
+    if(!rst)
+        begin
+        sm_seg = 7&apos;b0000000;
+        end
     else
-    timesec0=timesec0+1;  
-    end
-    if(~pause) begin
-    timesec0=0;
-    end
-    end
-    
-    always@(posedge show or negedge rst)
-    begin
-	if(!rst)
-	begin
-	sm_seg = 7&apos;b0000000;
-	end
-	else
-    case(timesec0)
-            0:sm_seg= 7&apos;b1111110;                     //显示0
-            1:sm_seg= 7&apos;b0110000;                     //显示1
-            2:sm_seg= 7&apos;b1101101;                     //显示2
-            3:sm_seg= 7&apos;b1111001;                     //显示3
-            4:sm_seg= 7&apos;b0110011;                     //显示4
-            5:sm_seg= 7&apos;b1011011;                     //显示5
-            6:sm_seg= 7&apos;b1011111;                     //显示6
-            7:sm_seg= 7&apos;b1110000;                     //显示7
-            8:sm_seg= 7&apos;b1111111;                     //显示8
-            9:sm_seg= 7&apos;b1111011;                     //显示9
-            default:
-            sm_seg= 7&apos;b0000000;                        //不显示
-    endcase
-    end
-    
+        case(timesec0)
+                0:sm_seg= 7&apos;b1111110;                     //显示0
+                1:sm_seg= 7&apos;b0110000;                     //显示1
+                2:sm_seg= 7&apos;b1101101;                     //显示2
+                3:sm_seg= 7&apos;b1111001;                     //显示3
+                4:sm_seg= 7&apos;b0110011;                     //显示4
+                5:sm_seg= 7&apos;b1011011;                     //显示5
+                6:sm_seg= 7&apos;b1011111;                     //显示6
+                7:sm_seg= 7&apos;b1110000;                     //显示7
+                8:sm_seg= 7&apos;b1111111;                     //显示8
+                9:sm_seg= 7&apos;b1111011;                     //显示9
+                default:
+                sm_seg= 7&apos;b0000000;                        //不显示
+        endcase
+end
 endmodule</string>
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>sm_bit,sm_seg:7</string>
+          <string>sm_seg:7</string>
         </entry>
       </elementAttributes>
       <pos x="820" y="240"/>
@@ -197,7 +190,7 @@ endmodule</string>
         </entry>
         <entry>
           <string>Label</string>
-          <string>translater</string>
+          <string>transcoder</string>
         </entry>
         <entry>
           <string>externalInputs</string>
@@ -205,7 +198,7 @@ endmodule</string>
         </entry>
         <entry>
           <string>Code</string>
-          <string>module translater(value,outled,en); 
+          <string>module transcoder(value,outled,en); 
 input [3:0]value;
 input en;
 output reg [6:0]outled;
@@ -286,11 +279,6 @@ default:;
         </entry>
       </elementAttributes>
       <pos x="760" y="20"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Out</elementName>
-      <elementAttributes/>
-      <pos x="1020" y="240"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -468,12 +456,12 @@ endmodule</string>
       <elementName>External</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>FSM</string>
-        </entry>
-        <entry>
           <string>applicationType</string>
           <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>FSM</string>
         </entry>
         <entry>
           <string>externalInputs</string>
@@ -488,46 +476,112 @@ endmodule</string>
     output reg F0
 	);
 	
+reg currentF1;
+reg currentF0;
+
+initial begin
+currentF1=1;
+currentF0=0;
+end
+
 always @(*)
 begin
     case(current)
         4&apos;b0001: if(|signal[7:1]) begin F1 &lt;=1; F0&lt;=0; end   // floor 1
                     else begin F1 &lt;=0; F0&lt;=0; end
-        4&apos;b0010: if(|signal[7:2]) begin F1 &lt;=1; F0&lt;=0; end   // floor 2
-                    else begin 
-                    if(|signal[0]) begin F1 &lt;=0; F0&lt;=1; end
-                    else begin F1 &lt;=0; F0&lt;=0; end 
+        4&apos;b0010: if({currentF1,currentF0}==2&apos;b10) begin
+                        if(|signal[7:2]) begin F1 &lt;=1; F0&lt;=0; end   // floor 2
+                        else begin 
+                        if(|signal[0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
                     end
-        4&apos;b0011: if(|signal[7:3]) begin F1 &lt;=1; F0&lt;=0; end
-                    else begin 
-                    if(|signal[1:0]) begin F1 &lt;=0; F0&lt;=1; end
-                    else begin F1 &lt;=0; F0&lt;=0; end 
+                 else begin
+                        if(|signal[0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin 
+                        if(|signal[7:2]) begin F1 &lt;=1; F0&lt;=0; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
                     end
-        4&apos;b0100: if(|signal[7:4]) begin F1 &lt;=1; F0&lt;=0; end
-                    else begin 
-                    if(|signal[2:0]) begin F1 &lt;=0; F0&lt;=1; end
-                    else begin F1 &lt;=0; F0&lt;=0; end 
+        
+        4&apos;b0011: if({currentF1,currentF0}==2&apos;b10) begin
+                        if(|signal[7:3]) begin F1 &lt;=1; F0&lt;=0; end   // floor 3
+                        else begin 
+                        if(|signal[1:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
                     end
-        4&apos;b0101: if(|signal[7:5]) begin F1 &lt;=1; F0&lt;=0; end
-                    else begin 
-                    if(|signal[3:0]) begin F1 &lt;=0; F0&lt;=1; end
-                    else begin F1 &lt;=0; F0&lt;=0; end 
+                 else begin
+                        if(|signal[1:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin 
+                        if(|signal[7:3]) begin F1 &lt;=1; F0&lt;=0; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
                     end
-        4&apos;b0110: if(|signal[7:6]) begin F1 &lt;=1; F0&lt;=0; end
-                    else begin 
-                    if(|signal[4:0]) begin F1 &lt;=0; F0&lt;=1; end
-                    else begin F1 &lt;=0; F0&lt;=0; end 
+        4&apos;b0100: if({currentF1,currentF0}==2&apos;b10) begin
+                        if(|signal[7:4]) begin F1 &lt;=1; F0&lt;=0; end   // floor 4
+                        else begin 
+                        if(|signal[2:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
                     end
-        4&apos;b0111: if(|signal[7]) begin F1 &lt;=1; F0&lt;=0; end
-                    else begin 
-                    if(|signal[5:0]) begin F1 &lt;=0; F0&lt;=1; end
-                    else begin F1 &lt;=0; F0&lt;=0; end 
+                 else begin
+                        if(|signal[2:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin 
+                        if(|signal[7:4]) begin F1 &lt;=1; F0&lt;=0; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
                     end
-        4&apos;b1000: if(|signal[6:0]) begin F1 &lt;=0; F0&lt;=1; end   // floor 8
+        4&apos;b0101: if({currentF1,currentF0}==2&apos;b10) begin
+                        if(|signal[7:5]) begin F1 &lt;=1; F0&lt;=0; end   // floor 5
+                        else begin 
+                        if(|signal[3:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
+                    end
+                 else begin
+                        if(|signal[3:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin 
+                        if(|signal[7:5]) begin F1 &lt;=1; F0&lt;=0; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
+                    end
+        4&apos;b0110: if({currentF1,currentF0}==2&apos;b10) begin
+                        if(|signal[7:6]) begin F1 &lt;=1; F0&lt;=0; end   // floor 6
+                        else begin 
+                        if(|signal[4:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
+                    end
+                 else begin
+                        if(|signal[4:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin 
+                        if(|signal[7:6]) begin F1 &lt;=1; F0&lt;=0; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
+                    end
+        4&apos;b0111: if({currentF1,currentF0}==2&apos;b10) begin
+                        if(|signal[7]) begin F1 &lt;=1; F0&lt;=0; end      // floor 7
+                        else begin 
+                        if(|signal[5:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
+                    end
+                 else begin
+                        if(|signal[5:0]) begin F1 &lt;=0; F0&lt;=1; end
+                        else begin 
+                        if(|signal[7]) begin F1 &lt;=1; F0&lt;=0; end
+                        else begin F1 &lt;=0; F0&lt;=0; end 
+                        end
+                    end
+        4&apos;b1000: if(|signal[6:0]) begin F1 &lt;=0; F0&lt;=1; end           // floor 8
                     else begin F1 &lt;=0; F0&lt;=0; end
-        default: if(|signal[7:1]) begin F1 &lt;=1; F0&lt;=0; end   // floor 1
+        default: if(|signal[7:1]) begin F1 &lt;=1; F0&lt;=0; end           // floor 1
                     else begin F1 &lt;=0; F0&lt;=0; end
     endcase
+
+    currentF0 &lt;= F0;
+    currentF1 &lt;= F1;
 
 end
 
@@ -688,12 +742,12 @@ endmodule</string>
       <elementName>External</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>pulse2level</string>
-        </entry>
-        <entry>
           <string>applicationType</string>
           <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>pulse2level</string>
         </entry>
         <entry>
           <string>externalInputs</string>
@@ -751,12 +805,12 @@ endmodule</string>
       <elementName>External</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>decode4_8</string>
-        </entry>
-        <entry>
           <string>applicationType</string>
           <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>decode4_8</string>
         </entry>
         <entry>
           <string>externalInputs</string>
@@ -832,12 +886,12 @@ endmodule</string>
       <elementName>External</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>transcoderDirect</string>
-        </entry>
-        <entry>
           <string>applicationType</string>
           <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>transcoderDirect</string>
         </entry>
         <entry>
           <string>externalInputs</string>
@@ -908,10 +962,6 @@ endmodule</string>
     <wire>
       <p1 x="760" y="260"/>
       <p2 x="820" y="260"/>
-    </wire>
-    <wire>
-      <p1 x="880" y="260"/>
-      <p2 x="1100" y="260"/>
     </wire>
     <wire>
       <p1 x="1120" y="260"/>
@@ -1002,12 +1052,12 @@ endmodule</string>
       <p2 x="1360" y="-280"/>
     </wire>
     <wire>
-      <p1 x="740" y="280"/>
-      <p2 x="820" y="280"/>
-    </wire>
-    <wire>
       <p1 x="1120" y="280"/>
       <p2 x="1200" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="880" y="280"/>
+      <p2 x="1060" y="280"/>
     </wire>
     <wire>
       <p1 x="280" y="920"/>
@@ -1098,12 +1148,12 @@ endmodule</string>
       <p2 x="580" y="300"/>
     </wire>
     <wire>
-      <p1 x="760" y="300"/>
-      <p2 x="820" y="300"/>
-    </wire>
-    <wire>
       <p1 x="1120" y="300"/>
       <p2 x="1180" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="300"/>
+      <p2 x="820" y="300"/>
     </wire>
     <wire>
       <p1 x="580" y="300"/>
@@ -1199,7 +1249,7 @@ endmodule</string>
     </wire>
     <wire>
       <p1 x="720" y="320"/>
-      <p2 x="760" y="320"/>
+      <p2 x="820" y="320"/>
     </wire>
     <wire>
       <p1 x="540" y="320"/>
@@ -1322,6 +1372,10 @@ endmodule</string>
       <p2 x="-460" y="220"/>
     </wire>
     <wire>
+      <p1 x="1060" y="220"/>
+      <p2 x="1100" y="220"/>
+    </wire>
+    <wire>
       <p1 x="300" y="860"/>
       <p2 x="380" y="860"/>
     </wire>
@@ -1400,10 +1454,6 @@ endmodule</string>
     <wire>
       <p1 x="780" y="240"/>
       <p2 x="820" y="240"/>
-    </wire>
-    <wire>
-      <p1 x="880" y="240"/>
-      <p2 x="1020" y="240"/>
     </wire>
     <wire>
       <p1 x="1120" y="240"/>
@@ -1528,10 +1578,6 @@ endmodule</string>
     <wire>
       <p1 x="1420" y="-240"/>
       <p2 x="1420" y="-20"/>
-    </wire>
-    <wire>
-      <p1 x="1100" y="220"/>
-      <p2 x="1100" y="260"/>
     </wire>
     <wire>
       <p1 x="1100" y="400"/>
@@ -1694,12 +1740,16 @@ endmodule</string>
       <p2 x="420" y="-60"/>
     </wire>
     <wire>
-      <p1 x="740" y="100"/>
-      <p2 x="740" y="280"/>
-    </wire>
-    <wire>
       <p1 x="740" y="-20"/>
       <p2 x="740" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="100"/>
+      <p2 x="740" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="1060" y="220"/>
+      <p2 x="1060" y="280"/>
     </wire>
     <wire>
       <p1 x="-40" y="20"/>
@@ -1824,10 +1874,6 @@ endmodule</string>
     <wire>
       <p1 x="760" y="240"/>
       <p2 x="760" y="260"/>
-    </wire>
-    <wire>
-      <p1 x="760" y="300"/>
-      <p2 x="760" y="320"/>
     </wire>
     <wire>
       <p1 x="760" y="-200"/>
