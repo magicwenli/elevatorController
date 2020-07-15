@@ -1,4 +1,4 @@
-## 简易8层电梯控制器
+# 简易8层电梯控制器
 
 使用Verilog HDL语言描述
 
@@ -34,11 +34,21 @@
 
 收到重置电梯的信号后，请求综合模块将清除全部请求信号，并将输出设定为请求到1楼。
 
+## FSM
+
+运行状态机
+
+![fsm](fsm.png)
+
 ## 仿真方法
 
-使用[Digital](https://github.com/hneemann/Digital)进行仿真。
+#### 使用[Digital](https://github.com/hneemann/Digital)进行仿真
 
 ![设计框图](digital.png)
+
+### 使用 Quartus II 9.0 进行仿真
+
+在~~新建文件夹~~搞了
 
 ## 感谢
 
