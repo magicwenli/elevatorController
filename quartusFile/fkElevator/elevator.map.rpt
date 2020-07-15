@@ -1,0 +1,380 @@
+Analysis & Synthesis report for elevator
+Thu Jul 16 00:59:03 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. User-Specified and Inferred Latches
+  8. Logic Cells Representing Combinational Loops
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
+ 13. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jul 16 00:59:03 2020        ;
+; Quartus II Version                 ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name                      ; elevator                                     ;
+; Top-level Entity Name              ; elevator                                     ;
+; Family                             ; Cyclone II                                   ;
+; Total logic elements               ; 108                                          ;
+;     Total combinational functions  ; 108                                          ;
+;     Dedicated logic registers      ; 36                                           ;
+; Total registers                    ; 36                                           ;
+; Total pins                         ; 54                                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Device                                                       ; EP2C8T144C8        ;                    ;
+; Top-level entity name                                        ; elevator           ; elevator           ;
+; Family name                                                  ; Cyclone II         ; Stratix            ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; DSP Block Balancing                                          ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto ROM Replacement                                         ; On                 ; On                 ;
+; Auto RAM Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Strict RAM Replacement                                       ; Off                ; Off                ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                            ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Timing-Driven Synthesis                                      ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                  ; Off                ; Off                ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; SDC constraint protection                                    ; Off                ; Off                ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                          ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+
+; clock.v                          ; yes             ; User Verilog HDL File              ; C:/Users/vita/Downloads/fkElevator/clock.v            ;
+; counter.v                        ; yes             ; User Verilog HDL File              ; C:/Users/vita/Downloads/fkElevator/counter.v          ;
+; decode4_8.v                      ; yes             ; User Verilog HDL File              ; C:/Users/vita/Downloads/fkElevator/decode4_8.v        ;
+; fenPin.v                         ; yes             ; User Verilog HDL File              ; C:/Users/vita/Downloads/fkElevator/fenPin.v           ;
+; FSM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/vita/Downloads/fkElevator/FSM.v              ;
+; pulse2level.V                    ; yes             ; User Verilog HDL File              ; C:/Users/vita/Downloads/fkElevator/pulse2level.V      ;
+; signalDeal.v                     ; yes             ; User Verilog HDL File              ; C:/Users/vita/Downloads/fkElevator/signalDeal.v       ;
+; transcoderDirect.v               ; yes             ; User Verilog HDL File              ; C:/Users/vita/Downloads/fkElevator/transcoderDirect.v ;
+; translater.v                     ; yes             ; User Verilog HDL File              ; C:/Users/vita/Downloads/fkElevator/translater.v       ;
+; elevator.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/vita/Downloads/fkElevator/elevator.bdf       ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 108   ;
+;                                             ;       ;
+; Total combinational functions               ; 108   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 63    ;
+;     -- 3 input functions                    ; 20    ;
+;     -- <=2 input functions                  ; 25    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 94    ;
+;     -- arithmetic mode                      ; 14    ;
+;                                             ;       ;
+; Total registers                             ; 36    ;
+;     -- Dedicated logic registers            ; 36    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 54    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 28    ;
+; Total fan-out                               ; 471   ;
+; Average fan-out                             ; 2.38  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
+; |elevator                   ; 108 (0)           ; 36 (0)       ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |elevator                        ; work         ;
+;    |FSM:inst3|              ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator|FSM:inst3              ; work         ;
+;    |clock:inst7|            ; 14 (14)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator|clock:inst7            ; work         ;
+;    |counter:inst4|          ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator|counter:inst4          ; work         ;
+;    |decode4_8:inst6|        ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator|decode4_8:inst6        ; work         ;
+;    |fenPin:inst5|           ; 13 (13)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator|fenPin:inst5           ; work         ;
+;    |pulse2level:inst2|      ; 16 (16)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator|pulse2level:inst2      ; work         ;
+;    |transcoderDirect:inst8| ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator|transcoderDirect:inst8 ; work         ;
+;    |translater:inst9|       ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |elevator|translater:inst9       ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++----------------------------------------------------+-----------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal   ; Free of Timing Hazards ;
++----------------------------------------------------+-----------------------+------------------------+
+; translater:inst9|outled[0]                         ; translater:inst9|Mux7 ; yes                    ;
+; translater:inst9|outled[1]                         ; translater:inst9|Mux7 ; yes                    ;
+; translater:inst9|outled[2]                         ; translater:inst9|Mux7 ; yes                    ;
+; translater:inst9|outled[3]                         ; translater:inst9|Mux7 ; yes                    ;
+; translater:inst9|outled[4]                         ; translater:inst9|Mux7 ; yes                    ;
+; translater:inst9|outled[5]                         ; translater:inst9|Mux7 ; yes                    ;
+; translater:inst9|outled[6]                         ; translater:inst9|Mux7 ; yes                    ;
+; Number of user-specified and inferred latches = 7  ;                       ;                        ;
++----------------------------------------------------+-----------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; FSM:inst3|F1~13                                        ;   ;
+; Number of logic cells representing combinational loops ; 1 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++----------------------------------------+--------------------------------------------+
+; Register name                          ; Reason for Removal                         ;
++----------------------------------------+--------------------------------------------+
+; pulse2level:inst2|saver[7]             ; Merged with pulse2level:inst2|signalOut[7] ;
+; pulse2level:inst2|saver[6]             ; Merged with pulse2level:inst2|signalOut[6] ;
+; pulse2level:inst2|saver[5]             ; Merged with pulse2level:inst2|signalOut[5] ;
+; pulse2level:inst2|saver[4]             ; Merged with pulse2level:inst2|signalOut[4] ;
+; pulse2level:inst2|saver[3]             ; Merged with pulse2level:inst2|signalOut[3] ;
+; pulse2level:inst2|saver[2]             ; Merged with pulse2level:inst2|signalOut[2] ;
+; pulse2level:inst2|saver[1]             ; Merged with pulse2level:inst2|signalOut[1] ;
+; pulse2level:inst2|saver[0]             ; Merged with pulse2level:inst2|signalOut[0] ;
+; counter:inst4|reset[3]                 ; Merged with counter:inst4|sl_reg[3]        ;
+; counter:inst4|reset[2]                 ; Merged with counter:inst4|sl_reg[2]        ;
+; counter:inst4|reset[1]                 ; Merged with counter:inst4|sl_reg[1]        ;
+; counter:inst4|reset[0]                 ; Merged with counter:inst4|sl_reg[0]        ;
+; fenPin:inst5|timeclk[13..31]           ; Lost fanout                                ;
+; Total Number of Removed Registers = 31 ;                                            ;
++----------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 36    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 7     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 3     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |elevator|clock:inst7|timesec0[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Jul 16 00:59:00 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off elevator -c elevator
+Info: Found 1 design units, including 1 entities, in source file clock.v
+    Info: Found entity 1: clock
+Info: Found 1 design units, including 1 entities, in source file counter.v
+    Info: Found entity 1: counter
+Info: Found 1 design units, including 1 entities, in source file decode4_8.v
+    Info: Found entity 1: decode4_8
+Info: Found 1 design units, including 1 entities, in source file fenPin.v
+    Info: Found entity 1: fenPin
+Info: Found 1 design units, including 1 entities, in source file FSM.v
+    Info: Found entity 1: FSM
+Info: Found 1 design units, including 1 entities, in source file pulse2level.V
+    Info: Found entity 1: pulse2level
+Info: Found 1 design units, including 1 entities, in source file signalDeal.v
+    Info: Found entity 1: signalDeal
+Info: Found 1 design units, including 1 entities, in source file transcoderDirect.v
+    Info: Found entity 1: transcoderDirect
+Info: Found 1 design units, including 1 entities, in source file translater.v
+    Info: Found entity 1: translater
+Info: Found 1 design units, including 1 entities, in source file elevator.bdf
+    Info: Found entity 1: elevator
+Info: Elaborating entity "elevator" for the top level hierarchy
+Info: Elaborating entity "transcoderDirect" for hierarchy "transcoderDirect:inst8"
+Info: Elaborating entity "FSM" for hierarchy "FSM:inst3"
+Info: Elaborating entity "counter" for hierarchy "counter:inst4"
+Warning (10230): Verilog HDL assignment warning at counter.v(18): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at counter.v(19): truncated value with size 32 to match size of target (4)
+Info (10264): Verilog HDL Case Statement information at counter.v(17): all case item expressions in this case statement are onehot
+Info: Elaborating entity "fenPin" for hierarchy "fenPin:inst5"
+Info: Elaborating entity "pulse2level" for hierarchy "pulse2level:inst2"
+Info: Elaborating entity "decode4_8" for hierarchy "decode4_8:inst6"
+Info: Elaborating entity "signalDeal" for hierarchy "signalDeal:inst"
+Info: Elaborating entity "clock" for hierarchy "clock:inst7"
+Warning (10230): Verilog HDL assignment warning at clock.v(19): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "translater" for hierarchy "translater:inst9"
+Warning (10240): Verilog HDL Always Construct warning at translater.v(8): inferring latch(es) for variable "outled", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "outled[0]" at translater.v(11)
+Info (10041): Inferred latch for "outled[1]" at translater.v(11)
+Info (10041): Inferred latch for "outled[2]" at translater.v(11)
+Info (10041): Inferred latch for "outled[3]" at translater.v(11)
+Info (10041): Inferred latch for "outled[4]" at translater.v(11)
+Info (10041): Inferred latch for "outled[5]" at translater.v(11)
+Info (10041): Inferred latch for "outled[6]" at translater.v(11)
+Warning: Latch translater:inst9|outled[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:inst4|sl_reg[1]
+Warning: Latch translater:inst9|outled[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:inst4|sl_reg[1]
+Warning: Latch translater:inst9|outled[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:inst4|sl_reg[1]
+Warning: Latch translater:inst9|outled[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:inst4|sl_reg[1]
+Warning: Latch translater:inst9|outled[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:inst4|sl_reg[1]
+Warning: Latch translater:inst9|outled[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:inst4|sl_reg[2]
+Warning: Latch translater:inst9|outled[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal counter:inst4|sl_reg[1]
+Critical Warning: Ignored Power-Up Level option on the following registers
+    Critical Warning: Register clock:inst7|sm_seg[0] will power up to Low
+Info: 19 registers lost all their fanouts during netlist optimizations. The first 19 are displayed below.
+    Info: Register "fenPin:inst5|timeclk[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "fenPin:inst5|timeclk[31]" lost all its fanouts during netlist optimizations.
+Info: Implemented 162 device resources after synthesis - the final resource count might be different
+    Info: Implemented 25 input pins
+    Info: Implemented 29 output pins
+    Info: Implemented 108 logic cells
+Info: Generated suppressed messages file C:/Users/vita/Downloads/fkElevator/elevator.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 237 megabytes
+    Info: Processing ended: Thu Jul 16 00:59:03 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/vita/Downloads/fkElevator/elevator.map.smsg.
+
+

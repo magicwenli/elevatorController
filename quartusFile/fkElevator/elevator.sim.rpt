@@ -1,0 +1,530 @@
+Simulator report for elevator
+Thu Jul 16 00:59:56 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 10.0 s       ;
+; Simulation Netlist Size     ; 201 nodes    ;
+; Simulation Coverage         ;      22.22 % ;
+; Total Number of Transitions ; 1371346      ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C8T144C8  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      22.22 % ;
+; Total nodes checked                                 ; 201          ;
+; Total output ports checked                          ; 207          ;
+; Total output ports with complete 1/0-value coverage ; 46           ;
+; Total output ports with no 1/0-value coverage       ; 147          ;
+; Total output ports with no 1-value coverage         ; 148          ;
+; Total output ports with no 0-value coverage         ; 160          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                ;
++--------------------------------------------+--------------------------------------------+------------------+
+; Node Name                                  ; Output Port Name                           ; Output Port Type ;
++--------------------------------------------+--------------------------------------------+------------------+
+; |elevator|fenPin:inst5|timeclk[12]         ; |elevator|fenPin:inst5|timeclk[12]         ; regout           ;
+; |elevator|fenPin:inst5|timeclk[11]         ; |elevator|fenPin:inst5|timeclk[11]         ; regout           ;
+; |elevator|fenPin:inst5|timeclk[10]         ; |elevator|fenPin:inst5|timeclk[10]         ; regout           ;
+; |elevator|fenPin:inst5|timeclk[9]          ; |elevator|fenPin:inst5|timeclk[9]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[8]          ; |elevator|fenPin:inst5|timeclk[8]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[7]          ; |elevator|fenPin:inst5|timeclk[7]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[6]          ; |elevator|fenPin:inst5|timeclk[6]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[5]          ; |elevator|fenPin:inst5|timeclk[5]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[4]          ; |elevator|fenPin:inst5|timeclk[4]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[3]          ; |elevator|fenPin:inst5|timeclk[3]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[2]          ; |elevator|fenPin:inst5|timeclk[2]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[1]          ; |elevator|fenPin:inst5|timeclk[1]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[0]          ; |elevator|fenPin:inst5|timeclk[0]          ; regout           ;
+; |elevator|fenPin:inst5|timeclk[1]~12       ; |elevator|fenPin:inst5|timeclk[1]~12       ; combout          ;
+; |elevator|fenPin:inst5|timeclk[1]~12       ; |elevator|fenPin:inst5|timeclk[1]~13       ; cout             ;
+; |elevator|fenPin:inst5|timeclk[2]~14       ; |elevator|fenPin:inst5|timeclk[2]~14       ; combout          ;
+; |elevator|fenPin:inst5|timeclk[2]~14       ; |elevator|fenPin:inst5|timeclk[2]~15       ; cout             ;
+; |elevator|fenPin:inst5|timeclk[3]~16       ; |elevator|fenPin:inst5|timeclk[3]~16       ; combout          ;
+; |elevator|fenPin:inst5|timeclk[3]~16       ; |elevator|fenPin:inst5|timeclk[3]~17       ; cout             ;
+; |elevator|fenPin:inst5|timeclk[4]~18       ; |elevator|fenPin:inst5|timeclk[4]~18       ; combout          ;
+; |elevator|fenPin:inst5|timeclk[4]~18       ; |elevator|fenPin:inst5|timeclk[4]~19       ; cout             ;
+; |elevator|fenPin:inst5|timeclk[5]~20       ; |elevator|fenPin:inst5|timeclk[5]~20       ; combout          ;
+; |elevator|fenPin:inst5|timeclk[5]~20       ; |elevator|fenPin:inst5|timeclk[5]~21       ; cout             ;
+; |elevator|fenPin:inst5|timeclk[6]~22       ; |elevator|fenPin:inst5|timeclk[6]~22       ; combout          ;
+; |elevator|fenPin:inst5|timeclk[6]~22       ; |elevator|fenPin:inst5|timeclk[6]~23       ; cout             ;
+; |elevator|fenPin:inst5|timeclk[7]~24       ; |elevator|fenPin:inst5|timeclk[7]~24       ; combout          ;
+; |elevator|fenPin:inst5|timeclk[7]~24       ; |elevator|fenPin:inst5|timeclk[7]~25       ; cout             ;
+; |elevator|fenPin:inst5|timeclk[8]~26       ; |elevator|fenPin:inst5|timeclk[8]~26       ; combout          ;
+; |elevator|fenPin:inst5|timeclk[8]~26       ; |elevator|fenPin:inst5|timeclk[8]~27       ; cout             ;
+; |elevator|fenPin:inst5|timeclk[9]~28       ; |elevator|fenPin:inst5|timeclk[9]~28       ; combout          ;
+; |elevator|fenPin:inst5|timeclk[9]~28       ; |elevator|fenPin:inst5|timeclk[9]~29       ; cout             ;
+; |elevator|fenPin:inst5|timeclk[10]~30      ; |elevator|fenPin:inst5|timeclk[10]~30      ; combout          ;
+; |elevator|fenPin:inst5|timeclk[10]~30      ; |elevator|fenPin:inst5|timeclk[10]~31      ; cout             ;
+; |elevator|fenPin:inst5|timeclk[11]~32      ; |elevator|fenPin:inst5|timeclk[11]~32      ; combout          ;
+; |elevator|fenPin:inst5|timeclk[11]~32      ; |elevator|fenPin:inst5|timeclk[11]~33      ; cout             ;
+; |elevator|fenPin:inst5|timeclk[12]~34      ; |elevator|fenPin:inst5|timeclk[12]~34      ; combout          ;
+; |elevator|fenPin:inst5|timeclk[0]~36       ; |elevator|fenPin:inst5|timeclk[0]~36       ; combout          ;
+; |elevator|stin4                            ; |elevator|stin4~corein                     ; combout          ;
+; |elevator|clk                              ; |elevator|clk~corein                       ; combout          ;
+; |elevator|stin3                            ; |elevator|stin3~corein                     ; combout          ;
+; |elevator|stin8                            ; |elevator|stin8~corein                     ; combout          ;
+; |elevator|stin7                            ; |elevator|stin7~corein                     ; combout          ;
+; |elevator|stin6                            ; |elevator|stin6~corein                     ; combout          ;
+; |elevator|stin1                            ; |elevator|stin1~corein                     ; combout          ;
+; |elevator|fenPin:inst5|timeclk[12]~clkctrl ; |elevator|fenPin:inst5|timeclk[12]~clkctrl ; outclk           ;
+; |elevator|clk~clkctrl                      ; |elevator|clk~clkctrl                      ; outclk           ;
++--------------------------------------------+--------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                           ;
++------------------------------------------------+------------------------------------------------+------------------+
+; Node Name                                      ; Output Port Name                               ; Output Port Type ;
++------------------------------------------------+------------------------------------------------+------------------+
+; |elevator|counter:inst4|sl_reg[0]              ; |elevator|counter:inst4|sl_reg[0]              ; regout           ;
+; |elevator|counter:inst4|sl_reg[1]              ; |elevator|counter:inst4|sl_reg[1]              ; regout           ;
+; |elevator|FSM:inst3|Mux1~2                     ; |elevator|FSM:inst3|Mux1~2                     ; combout          ;
+; |elevator|pulse2level:inst2|signalOut[3]       ; |elevator|pulse2level:inst2|signalOut[3]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[2]       ; |elevator|pulse2level:inst2|signalOut[2]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[1]       ; |elevator|pulse2level:inst2|signalOut[1]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[7]       ; |elevator|pulse2level:inst2|signalOut[7]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[6]       ; |elevator|pulse2level:inst2|signalOut[6]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[5]       ; |elevator|pulse2level:inst2|signalOut[5]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[4]       ; |elevator|pulse2level:inst2|signalOut[4]       ; regout           ;
+; |elevator|FSM:inst3|WideOr11~0                 ; |elevator|FSM:inst3|WideOr11~0                 ; combout          ;
+; |elevator|FSM:inst3|WideOr11                   ; |elevator|FSM:inst3|WideOr11                   ; combout          ;
+; |elevator|counter:inst4|sl_reg[3]              ; |elevator|counter:inst4|sl_reg[3]              ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[0]       ; |elevator|pulse2level:inst2|signalOut[0]       ; regout           ;
+; |elevator|FSM:inst3|WideOr10~0                 ; |elevator|FSM:inst3|WideOr10~0                 ; combout          ;
+; |elevator|FSM:inst3|F1~14                      ; |elevator|FSM:inst3|F1~14                      ; combout          ;
+; |elevator|FSM:inst3|F1~15                      ; |elevator|FSM:inst3|F1~15                      ; combout          ;
+; |elevator|FSM:inst3|F1~16                      ; |elevator|FSM:inst3|F1~16                      ; combout          ;
+; |elevator|FSM:inst3|Mux1~3                     ; |elevator|FSM:inst3|Mux1~3                     ; combout          ;
+; |elevator|FSM:inst3|F1~17                      ; |elevator|FSM:inst3|F1~17                      ; combout          ;
+; |elevator|FSM:inst3|Mux0~0                     ; |elevator|FSM:inst3|Mux0~0                     ; combout          ;
+; |elevator|FSM:inst3|WideOr9~0                  ; |elevator|FSM:inst3|WideOr9~0                  ; combout          ;
+; |elevator|FSM:inst3|F1~18                      ; |elevator|FSM:inst3|F1~18                      ; combout          ;
+; |elevator|FSM:inst3|Mux0~1                     ; |elevator|FSM:inst3|Mux0~1                     ; combout          ;
+; |elevator|counter:inst4|sl_reg[2]              ; |elevator|counter:inst4|sl_reg[2]              ; regout           ;
+; |elevator|FSM:inst3|WideOr1~0                  ; |elevator|FSM:inst3|WideOr1~0                  ; combout          ;
+; |elevator|FSM:inst3|Mux0~2                     ; |elevator|FSM:inst3|Mux0~2                     ; combout          ;
+; |elevator|FSM:inst3|WideOr0                    ; |elevator|FSM:inst3|WideOr0                    ; combout          ;
+; |elevator|FSM:inst3|Mux0~3                     ; |elevator|FSM:inst3|Mux0~3                     ; combout          ;
+; |elevator|FSM:inst3|Mux0~4                     ; |elevator|FSM:inst3|Mux0~4                     ; combout          ;
+; |elevator|FSM:inst3|Mux0~5                     ; |elevator|FSM:inst3|Mux0~5                     ; combout          ;
+; |elevator|FSM:inst3|Mux0~6                     ; |elevator|FSM:inst3|Mux0~6                     ; combout          ;
+; |elevator|FSM:inst3|Mux1~4                     ; |elevator|FSM:inst3|Mux1~4                     ; combout          ;
+; |elevator|FSM:inst3|Mux1~5                     ; |elevator|FSM:inst3|Mux1~5                     ; combout          ;
+; |elevator|FSM:inst3|Mux1~6                     ; |elevator|FSM:inst3|Mux1~6                     ; combout          ;
+; |elevator|FSM:inst3|F0~12                      ; |elevator|FSM:inst3|F0~12                      ; combout          ;
+; |elevator|FSM:inst3|F0~13                      ; |elevator|FSM:inst3|F0~13                      ; combout          ;
+; |elevator|FSM:inst3|F0~14                      ; |elevator|FSM:inst3|F0~14                      ; combout          ;
+; |elevator|FSM:inst3|Mux1~7                     ; |elevator|FSM:inst3|Mux1~7                     ; combout          ;
+; |elevator|FSM:inst3|F0~15                      ; |elevator|FSM:inst3|F0~15                      ; combout          ;
+; |elevator|FSM:inst3|Mux1~8                     ; |elevator|FSM:inst3|Mux1~8                     ; combout          ;
+; |elevator|FSM:inst3|Mux1~9                     ; |elevator|FSM:inst3|Mux1~9                     ; combout          ;
+; |elevator|transcoderDirect:inst8|led_out~8     ; |elevator|transcoderDirect:inst8|led_out~8     ; combout          ;
+; |elevator|transcoderDirect:inst8|led_out[1]~9  ; |elevator|transcoderDirect:inst8|led_out[1]~9  ; combout          ;
+; |elevator|transcoderDirect:inst8|led_out[2]~10 ; |elevator|transcoderDirect:inst8|led_out[2]~10 ; combout          ;
+; |elevator|clock:inst7|sm_seg[1]                ; |elevator|clock:inst7|sm_seg[1]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[2]                ; |elevator|clock:inst7|sm_seg[2]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[3]                ; |elevator|clock:inst7|sm_seg[3]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[6]                ; |elevator|clock:inst7|sm_seg[6]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[0]                ; |elevator|clock:inst7|sm_seg[0]                ; regout           ;
+; |elevator|counter:inst4|sl_reg[0]~3            ; |elevator|counter:inst4|sl_reg[0]~3            ; combout          ;
+; |elevator|transcoderDirect:inst8|Decoder0~0    ; |elevator|transcoderDirect:inst8|Decoder0~0    ; combout          ;
+; |elevator|counter:inst4|sl_reg[1]~5            ; |elevator|counter:inst4|sl_reg[1]~5            ; cout             ;
+; |elevator|counter:inst4|sl_reg[1]~6            ; |elevator|counter:inst4|sl_reg[1]~6            ; combout          ;
+; |elevator|counter:inst4|sl_reg[1]~6            ; |elevator|counter:inst4|sl_reg[1]~7            ; cout             ;
+; |elevator|transcoderDirect:inst8|led_out~11    ; |elevator|transcoderDirect:inst8|led_out~11    ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~0           ; |elevator|decode4_8:inst6|Decoder0~0           ; combout          ;
+; |elevator|pulse2level:inst2|saver~17           ; |elevator|pulse2level:inst2|saver~17           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~1           ; |elevator|decode4_8:inst6|Decoder0~1           ; combout          ;
+; |elevator|pulse2level:inst2|saver~19           ; |elevator|pulse2level:inst2|saver~19           ; combout          ;
+; |elevator|pulse2level:inst2|saver~20           ; |elevator|pulse2level:inst2|saver~20           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~2           ; |elevator|decode4_8:inst6|Decoder0~2           ; combout          ;
+; |elevator|pulse2level:inst2|saver~21           ; |elevator|pulse2level:inst2|saver~21           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~3           ; |elevator|decode4_8:inst6|Decoder0~3           ; combout          ;
+; |elevator|pulse2level:inst2|saver~23           ; |elevator|pulse2level:inst2|saver~23           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~4           ; |elevator|decode4_8:inst6|Decoder0~4           ; combout          ;
+; |elevator|pulse2level:inst2|saver~25           ; |elevator|pulse2level:inst2|saver~25           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~5           ; |elevator|decode4_8:inst6|Decoder0~5           ; combout          ;
+; |elevator|pulse2level:inst2|saver~27           ; |elevator|pulse2level:inst2|saver~27           ; combout          ;
+; |elevator|pulse2level:inst2|saver~28           ; |elevator|pulse2level:inst2|saver~28           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~6           ; |elevator|decode4_8:inst6|Decoder0~6           ; combout          ;
+; |elevator|pulse2level:inst2|saver~29           ; |elevator|pulse2level:inst2|saver~29           ; combout          ;
+; |elevator|counter:inst4|sl_reg[2]~8            ; |elevator|counter:inst4|sl_reg[2]~8            ; combout          ;
+; |elevator|counter:inst4|sl_reg[2]~8            ; |elevator|counter:inst4|sl_reg[2]~9            ; cout             ;
+; |elevator|counter:inst4|sl_reg[3]~10           ; |elevator|counter:inst4|sl_reg[3]~10           ; combout          ;
+; |elevator|transcoderDirect:inst8|Decoder0~1    ; |elevator|transcoderDirect:inst8|Decoder0~1    ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~7           ; |elevator|decode4_8:inst6|Decoder0~7           ; combout          ;
+; |elevator|pulse2level:inst2|saver~31           ; |elevator|pulse2level:inst2|saver~31           ; combout          ;
+; |elevator|clock:inst7|timesec0[0]              ; |elevator|clock:inst7|timesec0[0]              ; regout           ;
+; |elevator|clock:inst7|timesec0[1]              ; |elevator|clock:inst7|timesec0[1]              ; regout           ;
+; |elevator|clock:inst7|timesec0[2]              ; |elevator|clock:inst7|timesec0[2]              ; regout           ;
+; |elevator|clock:inst7|timesec0[3]              ; |elevator|clock:inst7|timesec0[3]              ; regout           ;
+; |elevator|clock:inst7|WideOr5~0                ; |elevator|clock:inst7|WideOr5~0                ; combout          ;
+; |elevator|clock:inst7|WideOr4~0                ; |elevator|clock:inst7|WideOr4~0                ; combout          ;
+; |elevator|clock:inst7|WideOr3~0                ; |elevator|clock:inst7|WideOr3~0                ; combout          ;
+; |elevator|clock:inst7|WideOr2~0                ; |elevator|clock:inst7|WideOr2~0                ; combout          ;
+; |elevator|clock:inst7|WideOr1~0                ; |elevator|clock:inst7|WideOr1~0                ; combout          ;
+; |elevator|clock:inst7|WideOr0~0                ; |elevator|clock:inst7|WideOr0~0                ; combout          ;
+; |elevator|clock:inst7|WideOr6~0                ; |elevator|clock:inst7|WideOr6~0                ; combout          ;
+; |elevator|translater:inst9|Mux0~6              ; |elevator|translater:inst9|Mux0~6              ; combout          ;
+; |elevator|translater:inst9|Mux7~0              ; |elevator|translater:inst9|Mux7~0              ; combout          ;
+; |elevator|translater:inst9|Mux6~6              ; |elevator|translater:inst9|Mux6~6              ; combout          ;
+; |elevator|translater:inst9|Mux5~6              ; |elevator|translater:inst9|Mux5~6              ; combout          ;
+; |elevator|translater:inst9|Mux4~6              ; |elevator|translater:inst9|Mux4~6              ; combout          ;
+; |elevator|translater:inst9|Mux3~6              ; |elevator|translater:inst9|Mux3~6              ; combout          ;
+; |elevator|translater:inst9|Mux2~6              ; |elevator|translater:inst9|Mux2~6              ; combout          ;
+; |elevator|translater:inst9|Mux1~5              ; |elevator|translater:inst9|Mux1~5              ; combout          ;
+; |elevator|clock:inst7|Equal0~0                 ; |elevator|clock:inst7|Equal0~0                 ; combout          ;
+; |elevator|clock:inst7|timesec0~14              ; |elevator|clock:inst7|timesec0~14              ; combout          ;
+; |elevator|clock:inst7|timesec0[0]~15           ; |elevator|clock:inst7|timesec0[0]~15           ; combout          ;
+; |elevator|clock:inst7|timesec0~16              ; |elevator|clock:inst7|timesec0~16              ; combout          ;
+; |elevator|clock:inst7|Add0~0                   ; |elevator|clock:inst7|Add0~0                   ; combout          ;
+; |elevator|clock:inst7|timesec0~17              ; |elevator|clock:inst7|timesec0~17              ; combout          ;
+; |elevator|FSM:inst3|Mux1~10                    ; |elevator|FSM:inst3|Mux1~10                    ; combout          ;
+; |elevator|clock:inst7|timesec0~18              ; |elevator|clock:inst7|timesec0~18              ; combout          ;
+; |elevator|dwin4                                ; |elevator|dwin4~corein                         ; combout          ;
+; |elevator|upin4                                ; |elevator|upin4~corein                         ; combout          ;
+; |elevator|reset                                ; |elevator|reset~corein                         ; combout          ;
+; |elevator|dwin3                                ; |elevator|dwin3~corein                         ; combout          ;
+; |elevator|upin3                                ; |elevator|upin3~corein                         ; combout          ;
+; |elevator|dwin2                                ; |elevator|dwin2~corein                         ; combout          ;
+; |elevator|stin2                                ; |elevator|stin2~corein                         ; combout          ;
+; |elevator|upin2                                ; |elevator|upin2~corein                         ; combout          ;
+; |elevator|dwin8                                ; |elevator|dwin8~corein                         ; combout          ;
+; |elevator|dwin7                                ; |elevator|dwin7~corein                         ; combout          ;
+; |elevator|upin7                                ; |elevator|upin7~corein                         ; combout          ;
+; |elevator|dwin6                                ; |elevator|dwin6~corein                         ; combout          ;
+; |elevator|upin6                                ; |elevator|upin6~corein                         ; combout          ;
+; |elevator|dwin5                                ; |elevator|dwin5~corein                         ; combout          ;
+; |elevator|stin5                                ; |elevator|stin5~corein                         ; combout          ;
+; |elevator|upin5                                ; |elevator|upin5~corein                         ; combout          ;
+; |elevator|upin1                                ; |elevator|upin1~corein                         ; combout          ;
+; |elevator|dr0                                  ; |elevator|dr0                                  ; padio            ;
+; |elevator|dr1                                  ; |elevator|dr1                                  ; padio            ;
+; |elevator|dr2                                  ; |elevator|dr2                                  ; padio            ;
+; |elevator|dr3                                  ; |elevator|dr3                                  ; padio            ;
+; |elevator|dr4                                  ; |elevator|dr4                                  ; padio            ;
+; |elevator|dr5                                  ; |elevator|dr5                                  ; padio            ;
+; |elevator|dr6                                  ; |elevator|dr6                                  ; padio            ;
+; |elevator|cl1                                  ; |elevator|cl1                                  ; padio            ;
+; |elevator|cl2                                  ; |elevator|cl2                                  ; padio            ;
+; |elevator|cl3                                  ; |elevator|cl3                                  ; padio            ;
+; |elevator|cl6                                  ; |elevator|cl6                                  ; padio            ;
+; |elevator|cl0                                  ; |elevator|cl0                                  ; padio            ;
+; |elevator|cu0                                  ; |elevator|cu0                                  ; padio            ;
+; |elevator|cu1                                  ; |elevator|cu1                                  ; padio            ;
+; |elevator|cu2                                  ; |elevator|cu2                                  ; padio            ;
+; |elevator|cu3                                  ; |elevator|cu3                                  ; padio            ;
+; |elevator|cu6                                  ; |elevator|cu6                                  ; padio            ;
+; |elevator|level0                               ; |elevator|level0                               ; padio            ;
+; |elevator|level1                               ; |elevator|level1                               ; padio            ;
+; |elevator|level2                               ; |elevator|level2                               ; padio            ;
+; |elevator|level3                               ; |elevator|level3                               ; padio            ;
+; |elevator|level4                               ; |elevator|level4                               ; padio            ;
+; |elevator|level5                               ; |elevator|level5                               ; padio            ;
+; |elevator|level6                               ; |elevator|level6                               ; padio            ;
+; |elevator|level7                               ; |elevator|level7                               ; padio            ;
+; |elevator|translater:inst9|Mux7~0clkctrl       ; |elevator|translater:inst9|Mux7~0clkctrl       ; outclk           ;
++------------------------------------------------+------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                           ;
++------------------------------------------------+------------------------------------------------+------------------+
+; Node Name                                      ; Output Port Name                               ; Output Port Type ;
++------------------------------------------------+------------------------------------------------+------------------+
+; |elevator|counter:inst4|sl_reg[0]              ; |elevator|counter:inst4|sl_reg[0]              ; regout           ;
+; |elevator|counter:inst4|sl_reg[1]              ; |elevator|counter:inst4|sl_reg[1]              ; regout           ;
+; |elevator|FSM:inst3|Mux1~2                     ; |elevator|FSM:inst3|Mux1~2                     ; combout          ;
+; |elevator|pulse2level:inst2|signalOut[3]       ; |elevator|pulse2level:inst2|signalOut[3]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[2]       ; |elevator|pulse2level:inst2|signalOut[2]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[1]       ; |elevator|pulse2level:inst2|signalOut[1]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[7]       ; |elevator|pulse2level:inst2|signalOut[7]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[6]       ; |elevator|pulse2level:inst2|signalOut[6]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[5]       ; |elevator|pulse2level:inst2|signalOut[5]       ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[4]       ; |elevator|pulse2level:inst2|signalOut[4]       ; regout           ;
+; |elevator|FSM:inst3|WideOr11~0                 ; |elevator|FSM:inst3|WideOr11~0                 ; combout          ;
+; |elevator|FSM:inst3|WideOr11                   ; |elevator|FSM:inst3|WideOr11                   ; combout          ;
+; |elevator|counter:inst4|sl_reg[3]              ; |elevator|counter:inst4|sl_reg[3]              ; regout           ;
+; |elevator|pulse2level:inst2|signalOut[0]       ; |elevator|pulse2level:inst2|signalOut[0]       ; regout           ;
+; |elevator|FSM:inst3|WideOr10~0                 ; |elevator|FSM:inst3|WideOr10~0                 ; combout          ;
+; |elevator|FSM:inst3|F1~14                      ; |elevator|FSM:inst3|F1~14                      ; combout          ;
+; |elevator|FSM:inst3|F1~15                      ; |elevator|FSM:inst3|F1~15                      ; combout          ;
+; |elevator|FSM:inst3|F1~16                      ; |elevator|FSM:inst3|F1~16                      ; combout          ;
+; |elevator|FSM:inst3|Mux1~3                     ; |elevator|FSM:inst3|Mux1~3                     ; combout          ;
+; |elevator|FSM:inst3|F1~17                      ; |elevator|FSM:inst3|F1~17                      ; combout          ;
+; |elevator|FSM:inst3|Mux0~0                     ; |elevator|FSM:inst3|Mux0~0                     ; combout          ;
+; |elevator|FSM:inst3|WideOr9~0                  ; |elevator|FSM:inst3|WideOr9~0                  ; combout          ;
+; |elevator|FSM:inst3|F1~18                      ; |elevator|FSM:inst3|F1~18                      ; combout          ;
+; |elevator|FSM:inst3|Mux0~1                     ; |elevator|FSM:inst3|Mux0~1                     ; combout          ;
+; |elevator|counter:inst4|sl_reg[2]              ; |elevator|counter:inst4|sl_reg[2]              ; regout           ;
+; |elevator|FSM:inst3|WideOr1~0                  ; |elevator|FSM:inst3|WideOr1~0                  ; combout          ;
+; |elevator|FSM:inst3|Mux0~2                     ; |elevator|FSM:inst3|Mux0~2                     ; combout          ;
+; |elevator|FSM:inst3|WideOr0                    ; |elevator|FSM:inst3|WideOr0                    ; combout          ;
+; |elevator|FSM:inst3|Mux0~3                     ; |elevator|FSM:inst3|Mux0~3                     ; combout          ;
+; |elevator|FSM:inst3|Mux0~4                     ; |elevator|FSM:inst3|Mux0~4                     ; combout          ;
+; |elevator|FSM:inst3|Mux0~5                     ; |elevator|FSM:inst3|Mux0~5                     ; combout          ;
+; |elevator|FSM:inst3|Mux0~6                     ; |elevator|FSM:inst3|Mux0~6                     ; combout          ;
+; |elevator|FSM:inst3|Mux1~4                     ; |elevator|FSM:inst3|Mux1~4                     ; combout          ;
+; |elevator|FSM:inst3|Mux1~5                     ; |elevator|FSM:inst3|Mux1~5                     ; combout          ;
+; |elevator|FSM:inst3|Mux1~6                     ; |elevator|FSM:inst3|Mux1~6                     ; combout          ;
+; |elevator|FSM:inst3|F0~12                      ; |elevator|FSM:inst3|F0~12                      ; combout          ;
+; |elevator|FSM:inst3|F0~13                      ; |elevator|FSM:inst3|F0~13                      ; combout          ;
+; |elevator|FSM:inst3|F0~14                      ; |elevator|FSM:inst3|F0~14                      ; combout          ;
+; |elevator|FSM:inst3|Mux1~7                     ; |elevator|FSM:inst3|Mux1~7                     ; combout          ;
+; |elevator|FSM:inst3|F0~15                      ; |elevator|FSM:inst3|F0~15                      ; combout          ;
+; |elevator|FSM:inst3|Mux1~8                     ; |elevator|FSM:inst3|Mux1~8                     ; combout          ;
+; |elevator|FSM:inst3|Mux1~9                     ; |elevator|FSM:inst3|Mux1~9                     ; combout          ;
+; |elevator|transcoderDirect:inst8|led_out~8     ; |elevator|transcoderDirect:inst8|led_out~8     ; combout          ;
+; |elevator|transcoderDirect:inst8|led_out[1]~9  ; |elevator|transcoderDirect:inst8|led_out[1]~9  ; combout          ;
+; |elevator|transcoderDirect:inst8|led_out[2]~10 ; |elevator|transcoderDirect:inst8|led_out[2]~10 ; combout          ;
+; |elevator|clock:inst7|sm_seg[1]                ; |elevator|clock:inst7|sm_seg[1]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[2]                ; |elevator|clock:inst7|sm_seg[2]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[3]                ; |elevator|clock:inst7|sm_seg[3]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[4]                ; |elevator|clock:inst7|sm_seg[4]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[5]                ; |elevator|clock:inst7|sm_seg[5]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[6]                ; |elevator|clock:inst7|sm_seg[6]                ; regout           ;
+; |elevator|clock:inst7|sm_seg[0]                ; |elevator|clock:inst7|sm_seg[0]                ; regout           ;
+; |elevator|counter:inst4|sl_reg[0]~3            ; |elevator|counter:inst4|sl_reg[0]~3            ; combout          ;
+; |elevator|transcoderDirect:inst8|Decoder0~0    ; |elevator|transcoderDirect:inst8|Decoder0~0    ; combout          ;
+; |elevator|counter:inst4|sl_reg[1]~5            ; |elevator|counter:inst4|sl_reg[1]~5            ; cout             ;
+; |elevator|counter:inst4|sl_reg[1]~6            ; |elevator|counter:inst4|sl_reg[1]~6            ; combout          ;
+; |elevator|counter:inst4|sl_reg[1]~6            ; |elevator|counter:inst4|sl_reg[1]~7            ; cout             ;
+; |elevator|transcoderDirect:inst8|led_out~11    ; |elevator|transcoderDirect:inst8|led_out~11    ; combout          ;
+; |elevator|pulse2level:inst2|saver~16           ; |elevator|pulse2level:inst2|saver~16           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~0           ; |elevator|decode4_8:inst6|Decoder0~0           ; combout          ;
+; |elevator|pulse2level:inst2|saver~17           ; |elevator|pulse2level:inst2|saver~17           ; combout          ;
+; |elevator|pulse2level:inst2|saver~18           ; |elevator|pulse2level:inst2|saver~18           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~1           ; |elevator|decode4_8:inst6|Decoder0~1           ; combout          ;
+; |elevator|pulse2level:inst2|saver~19           ; |elevator|pulse2level:inst2|saver~19           ; combout          ;
+; |elevator|pulse2level:inst2|saver~20           ; |elevator|pulse2level:inst2|saver~20           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~2           ; |elevator|decode4_8:inst6|Decoder0~2           ; combout          ;
+; |elevator|pulse2level:inst2|saver~21           ; |elevator|pulse2level:inst2|saver~21           ; combout          ;
+; |elevator|pulse2level:inst2|saver~22           ; |elevator|pulse2level:inst2|saver~22           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~3           ; |elevator|decode4_8:inst6|Decoder0~3           ; combout          ;
+; |elevator|pulse2level:inst2|saver~23           ; |elevator|pulse2level:inst2|saver~23           ; combout          ;
+; |elevator|pulse2level:inst2|saver~24           ; |elevator|pulse2level:inst2|saver~24           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~4           ; |elevator|decode4_8:inst6|Decoder0~4           ; combout          ;
+; |elevator|pulse2level:inst2|saver~25           ; |elevator|pulse2level:inst2|saver~25           ; combout          ;
+; |elevator|pulse2level:inst2|saver~26           ; |elevator|pulse2level:inst2|saver~26           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~5           ; |elevator|decode4_8:inst6|Decoder0~5           ; combout          ;
+; |elevator|pulse2level:inst2|saver~27           ; |elevator|pulse2level:inst2|saver~27           ; combout          ;
+; |elevator|pulse2level:inst2|saver~28           ; |elevator|pulse2level:inst2|saver~28           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~6           ; |elevator|decode4_8:inst6|Decoder0~6           ; combout          ;
+; |elevator|pulse2level:inst2|saver~29           ; |elevator|pulse2level:inst2|saver~29           ; combout          ;
+; |elevator|counter:inst4|sl_reg[2]~8            ; |elevator|counter:inst4|sl_reg[2]~8            ; combout          ;
+; |elevator|counter:inst4|sl_reg[2]~8            ; |elevator|counter:inst4|sl_reg[2]~9            ; cout             ;
+; |elevator|counter:inst4|sl_reg[3]~10           ; |elevator|counter:inst4|sl_reg[3]~10           ; combout          ;
+; |elevator|transcoderDirect:inst8|Decoder0~1    ; |elevator|transcoderDirect:inst8|Decoder0~1    ; combout          ;
+; |elevator|pulse2level:inst2|saver~30           ; |elevator|pulse2level:inst2|saver~30           ; combout          ;
+; |elevator|decode4_8:inst6|Decoder0~7           ; |elevator|decode4_8:inst6|Decoder0~7           ; combout          ;
+; |elevator|pulse2level:inst2|saver~31           ; |elevator|pulse2level:inst2|saver~31           ; combout          ;
+; |elevator|clock:inst7|timesec0[0]              ; |elevator|clock:inst7|timesec0[0]              ; regout           ;
+; |elevator|clock:inst7|timesec0[1]              ; |elevator|clock:inst7|timesec0[1]              ; regout           ;
+; |elevator|clock:inst7|timesec0[2]              ; |elevator|clock:inst7|timesec0[2]              ; regout           ;
+; |elevator|clock:inst7|timesec0[3]              ; |elevator|clock:inst7|timesec0[3]              ; regout           ;
+; |elevator|clock:inst7|WideOr5~0                ; |elevator|clock:inst7|WideOr5~0                ; combout          ;
+; |elevator|clock:inst7|WideOr4~0                ; |elevator|clock:inst7|WideOr4~0                ; combout          ;
+; |elevator|clock:inst7|WideOr3~0                ; |elevator|clock:inst7|WideOr3~0                ; combout          ;
+; |elevator|clock:inst7|WideOr2~0                ; |elevator|clock:inst7|WideOr2~0                ; combout          ;
+; |elevator|clock:inst7|WideOr1~0                ; |elevator|clock:inst7|WideOr1~0                ; combout          ;
+; |elevator|clock:inst7|WideOr0~0                ; |elevator|clock:inst7|WideOr0~0                ; combout          ;
+; |elevator|clock:inst7|WideOr6~0                ; |elevator|clock:inst7|WideOr6~0                ; combout          ;
+; |elevator|translater:inst9|Mux0~6              ; |elevator|translater:inst9|Mux0~6              ; combout          ;
+; |elevator|translater:inst9|Mux7~0              ; |elevator|translater:inst9|Mux7~0              ; combout          ;
+; |elevator|translater:inst9|Mux6~6              ; |elevator|translater:inst9|Mux6~6              ; combout          ;
+; |elevator|translater:inst9|Mux5~6              ; |elevator|translater:inst9|Mux5~6              ; combout          ;
+; |elevator|translater:inst9|Mux4~6              ; |elevator|translater:inst9|Mux4~6              ; combout          ;
+; |elevator|translater:inst9|Mux3~6              ; |elevator|translater:inst9|Mux3~6              ; combout          ;
+; |elevator|translater:inst9|Mux2~6              ; |elevator|translater:inst9|Mux2~6              ; combout          ;
+; |elevator|translater:inst9|Mux1~5              ; |elevator|translater:inst9|Mux1~5              ; combout          ;
+; |elevator|clock:inst7|Equal0~0                 ; |elevator|clock:inst7|Equal0~0                 ; combout          ;
+; |elevator|clock:inst7|timesec0~14              ; |elevator|clock:inst7|timesec0~14              ; combout          ;
+; |elevator|clock:inst7|timesec0[0]~15           ; |elevator|clock:inst7|timesec0[0]~15           ; combout          ;
+; |elevator|clock:inst7|timesec0~16              ; |elevator|clock:inst7|timesec0~16              ; combout          ;
+; |elevator|clock:inst7|Add0~0                   ; |elevator|clock:inst7|Add0~0                   ; combout          ;
+; |elevator|clock:inst7|timesec0~17              ; |elevator|clock:inst7|timesec0~17              ; combout          ;
+; |elevator|FSM:inst3|Mux1~10                    ; |elevator|FSM:inst3|Mux1~10                    ; combout          ;
+; |elevator|clock:inst7|timesec0~18              ; |elevator|clock:inst7|timesec0~18              ; combout          ;
+; |elevator|switch                               ; |elevator|switch~corein                        ; combout          ;
+; |elevator|dwin4                                ; |elevator|dwin4~corein                         ; combout          ;
+; |elevator|upin4                                ; |elevator|upin4~corein                         ; combout          ;
+; |elevator|reset                                ; |elevator|reset~corein                         ; combout          ;
+; |elevator|dwin3                                ; |elevator|dwin3~corein                         ; combout          ;
+; |elevator|upin3                                ; |elevator|upin3~corein                         ; combout          ;
+; |elevator|dwin2                                ; |elevator|dwin2~corein                         ; combout          ;
+; |elevator|stin2                                ; |elevator|stin2~corein                         ; combout          ;
+; |elevator|upin2                                ; |elevator|upin2~corein                         ; combout          ;
+; |elevator|dwin8                                ; |elevator|dwin8~corein                         ; combout          ;
+; |elevator|dwin7                                ; |elevator|dwin7~corein                         ; combout          ;
+; |elevator|upin7                                ; |elevator|upin7~corein                         ; combout          ;
+; |elevator|dwin6                                ; |elevator|dwin6~corein                         ; combout          ;
+; |elevator|upin6                                ; |elevator|upin6~corein                         ; combout          ;
+; |elevator|dwin5                                ; |elevator|dwin5~corein                         ; combout          ;
+; |elevator|stin5                                ; |elevator|stin5~corein                         ; combout          ;
+; |elevator|upin5                                ; |elevator|upin5~corein                         ; combout          ;
+; |elevator|upin1                                ; |elevator|upin1~corein                         ; combout          ;
+; |elevator|dr0                                  ; |elevator|dr0                                  ; padio            ;
+; |elevator|dr1                                  ; |elevator|dr1                                  ; padio            ;
+; |elevator|dr2                                  ; |elevator|dr2                                  ; padio            ;
+; |elevator|dr3                                  ; |elevator|dr3                                  ; padio            ;
+; |elevator|dr4                                  ; |elevator|dr4                                  ; padio            ;
+; |elevator|dr5                                  ; |elevator|dr5                                  ; padio            ;
+; |elevator|dr6                                  ; |elevator|dr6                                  ; padio            ;
+; |elevator|cl1                                  ; |elevator|cl1                                  ; padio            ;
+; |elevator|cl2                                  ; |elevator|cl2                                  ; padio            ;
+; |elevator|cl3                                  ; |elevator|cl3                                  ; padio            ;
+; |elevator|cl4                                  ; |elevator|cl4                                  ; padio            ;
+; |elevator|cl5                                  ; |elevator|cl5                                  ; padio            ;
+; |elevator|cl6                                  ; |elevator|cl6                                  ; padio            ;
+; |elevator|cl0                                  ; |elevator|cl0                                  ; padio            ;
+; |elevator|cu1                                  ; |elevator|cu1                                  ; padio            ;
+; |elevator|cu2                                  ; |elevator|cu2                                  ; padio            ;
+; |elevator|cu3                                  ; |elevator|cu3                                  ; padio            ;
+; |elevator|cu4                                  ; |elevator|cu4                                  ; padio            ;
+; |elevator|cu5                                  ; |elevator|cu5                                  ; padio            ;
+; |elevator|cu6                                  ; |elevator|cu6                                  ; padio            ;
+; |elevator|level0                               ; |elevator|level0                               ; padio            ;
+; |elevator|level1                               ; |elevator|level1                               ; padio            ;
+; |elevator|level2                               ; |elevator|level2                               ; padio            ;
+; |elevator|level3                               ; |elevator|level3                               ; padio            ;
+; |elevator|level4                               ; |elevator|level4                               ; padio            ;
+; |elevator|level5                               ; |elevator|level5                               ; padio            ;
+; |elevator|level6                               ; |elevator|level6                               ; padio            ;
+; |elevator|level7                               ; |elevator|level7                               ; padio            ;
+; |elevator|translater:inst9|Mux7~0clkctrl       ; |elevator|translater:inst9|Mux7~0clkctrl       ; outclk           ;
++------------------------------------------------+------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Jul 16 00:59:46 2020
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off elevator -c elevator
+Info: Using vector source file "C:/Users/vita/Downloads/fkElevator/elevator.vwf"
+Warning: Can't find signal in vector source file for input pin "|elevator|dwin4"
+Warning: Can't find signal in vector source file for input pin "|elevator|upin4"
+Warning: Can't find signal in vector source file for input pin "|elevator|reset"
+Warning: Can't find signal in vector source file for input pin "|elevator|dwin3"
+Warning: Can't find signal in vector source file for input pin "|elevator|upin3"
+Warning: Can't find signal in vector source file for input pin "|elevator|dwin2"
+Warning: Can't find signal in vector source file for input pin "|elevator|upin2"
+Warning: Can't find signal in vector source file for input pin "|elevator|dwin8"
+Warning: Can't find signal in vector source file for input pin "|elevator|dwin7"
+Warning: Can't find signal in vector source file for input pin "|elevator|upin7"
+Warning: Can't find signal in vector source file for input pin "|elevator|dwin6"
+Warning: Can't find signal in vector source file for input pin "|elevator|upin6"
+Warning: Can't find signal in vector source file for input pin "|elevator|dwin5"
+Warning: Can't find signal in vector source file for input pin "|elevator|upin5"
+Warning: Can't find signal in vector source file for input pin "|elevator|upin1"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      22.22 %
+Info: Number of transitions in simulation is 1371346
+Info: Quartus II Simulator was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 170 megabytes
+    Info: Processing ended: Thu Jul 16 00:59:56 2020
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:09
+
+

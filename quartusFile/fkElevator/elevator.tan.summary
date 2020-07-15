@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.691 ns
+From           : dwin6
+To             : pulse2level:inst2|signalOut[5]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 26.383 ns
+From           : counter:inst4|sl_reg[1]
+To             : dr4
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 15.929 ns
+From           : switch
+To             : dr4
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -5.031 ns
+From           : reset
+To             : pulse2level:inst2|signalOut[7]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 72.99 MHz ( period = 13.700 ns )
+From           : counter:inst4|sl_reg[1]
+To             : counter:inst4|sl_reg[3]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:inst4|sl_reg[0]
+To             : translater:inst9|outled[4]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 25
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 25
+
+--------------------------------------------------------------------------------------
+

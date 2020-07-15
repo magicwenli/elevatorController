@@ -3,14 +3,12 @@ module clock(
     input clk,
     input pause,
     input rst,
-    output reg sm_bit, 
     output reg[6:0]sm_seg
     );
     
 reg [3:0]timesec0;
 
 initial begin
-sm_bit=1;
 sm_seg=1;
 timesec0=0;
 end

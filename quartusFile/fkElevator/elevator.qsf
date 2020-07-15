@@ -1,0 +1,80 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		elevator_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C8T144C8
+set_global_assignment -name TOP_LEVEL_ENTITY elevator
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 6.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "06:02:57  JANUARY 01, 2006"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 144
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name VERILOG_FILE clock.v
+set_global_assignment -name VERILOG_FILE counter.v
+set_global_assignment -name VERILOG_FILE decode4_8.v
+set_global_assignment -name VERILOG_FILE fenPin.v
+set_global_assignment -name VERILOG_FILE FSM.v
+set_global_assignment -name VERILOG_FILE pulse2level.V
+set_global_assignment -name VERILOG_FILE signalDeal.v
+set_global_assignment -name VERILOG_FILE transcoderDirect.v
+set_global_assignment -name VERILOG_FILE translater.v
+set_global_assignment -name BDF_FILE elevator.bdf
+set_location_assignment PIN_18 -to clk
+set_location_assignment PIN_119 -to stin1
+set_location_assignment PIN_120 -to stin2
+set_location_assignment PIN_115 -to stin3
+set_location_assignment PIN_118 -to stin4
+set_location_assignment PIN_113 -to stin5
+set_location_assignment PIN_114 -to stin6
+set_location_assignment PIN_104 -to stin7
+set_location_assignment PIN_112 -to stin8
+set_location_assignment PIN_75 -to switch
+set_location_assignment PIN_45 -to cu0
+set_location_assignment PIN_47 -to cu1
+set_location_assignment PIN_48 -to cu2
+set_location_assignment PIN_51 -to cu3
+set_location_assignment PIN_52 -to cu4
+set_location_assignment PIN_53 -to cu5
+set_location_assignment PIN_121 -to cu6
+set_location_assignment PIN_30 -to dr0
+set_location_assignment PIN_31 -to dr1
+set_location_assignment PIN_32 -to dr2
+set_location_assignment PIN_40 -to dr3
+set_location_assignment PIN_41 -to dr4
+set_location_assignment PIN_42 -to dr5
+set_location_assignment PIN_43 -to dr6
+set_location_assignment PIN_103 -to level0
+set_location_assignment PIN_101 -to level1
+set_location_assignment PIN_100 -to level2
+set_location_assignment PIN_99 -to level3
+set_location_assignment PIN_96 -to level4
+set_location_assignment PIN_97 -to level5
+set_location_assignment PIN_93 -to level6
+set_location_assignment PIN_94 -to level7
+set_global_assignment -name VECTOR_WAVEFORM_FILE wa.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE elevator.vwf
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
