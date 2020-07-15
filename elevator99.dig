@@ -285,10 +285,10 @@ default:;
       <elementAttributes>
         <entry>
           <string>Description</string>
-          <string>输入要去的楼层</string>
+          <string>电梯内楼层选择</string>
         </entry>
       </elementAttributes>
-      <pos x="-240" y="-60"/>
+      <pos x="-600" y="340"/>
     </visualElement>
     <visualElement>
       <elementName>Splitter</elementName>
